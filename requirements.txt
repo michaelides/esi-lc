@@ -1,0 +1,47 @@
+# Core Dependencies
+chainlit>=1.0.0
+langchain>=0.1.0
+langchain-google-genai>=1.0.0
+python-dotenv>=1.0.0
+
+# LLM and Embeddings (Google Gemini)
+google-generativeai>=0.4.0
+
+# Tool Specific Dependencies
+langchain-community>=0.0.20 # For various tools and loaders
+tavily-python>=0.3.0       # Tavily Search API
+semantic-scholar-py>=0.6.0 # Semantic Scholar API client (official or community)
+beautifulsoup4>=4.12.0     # For web scraping (LangChain's WebBaseLoader or custom)
+requests>=2.31.0           # For web requests (used by many tools)
+lxml>=4.9.0                # Parser for HTML/XML, often used with BeautifulSoup
+
+# RAG - Vectorstore
+chromadb-client>=0.4.22    # ChromaDB client for vector storage
+# tiktoken>=0.5.0          # Tokenizer, often a dependency for text splitters / embeddings
+
+# File Processing
+pypdf>=3.17.0              # For PDF processing (PyPDFLoader)
+python-docx>=1.1.0         # For .docx file processing (Docx2txtLoader)
+openpyxl>=3.1.0            # For .xlsx file processing (pandas)
+pandas>=2.0.0              # For .xlsx, .csv data handling
+# The following are for less common file types, consider if essential for initial build
+# pyreadr>=0.4.0             # For .Rdata, .rds files
+# pyreadstat>=1.2.0          # For .sav (SPSS) files
+
+# Langchain Experimental (if using tools like PythonREPLTool from here)
+langchain_experimental>=0.0.50
+
+# For Code Execution Tool (PythonREPLTool)
+# No specific extra package, but relies on a working Python environment.
+
+# --- Optional, but good for development ---
+# black>=23.0.0              # Code formatter
+# ruff>=0.1.0                # Linter
+
+# --- Notes ---
+# - Versions are indicative; update as needed based on compatibility.
+# - Some langchain tools might pull their own specific dependencies.
+# - If you encounter "module not found" errors, you might need to add more specific packages.
+# - For Rdata, rds, sav, ensure the respective libraries (pyreadr, pyreadstat) are tested
+#   and compatible with your LangChain loaders or custom processing logic.
+#   You might need custom document loaders for these if LangChain doesn't directly support them.
